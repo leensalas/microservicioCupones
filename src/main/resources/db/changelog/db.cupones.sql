@@ -2,7 +2,7 @@
 
 --changeset ella:15 create-cupones
 CREATE TABLE cupones (
-    IdCupon BIGINT AUTO_INCREMENT PRIMARY KEY,
+    idCupon BIGINT AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(50) NOT NULL UNIQUE,
     porcentajeDescuento INT NOT NULL,
     fechaExpiracion DATE NOT NULL,
