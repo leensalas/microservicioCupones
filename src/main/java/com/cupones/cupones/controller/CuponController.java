@@ -2,68 +2,76 @@ package com.cupones.cupones.controller;
 
 import com.cupones.cupones.model.Cupones;
 import com.cupones.cupones.service.CuponServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cupones.cupones.assembler.CuponesAssembler;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/cupones")
 public class CuponController {
 
-    @Autowired
-    private CuponServices cuponServices;
+    private final CuponServices cuponServices;
+    private final CuponesAssembler cuponesAssembler;
 
-    @GetMapping
-    public List<Cupones> listarCupones() {
-        return cuponServices.listarCupones();
+    public CuponController(CuponServices cuponServices, CuponesAssembler cuponesAssembler) {
+        this.cuponServices = cuponServices;
+        this.cuponesAssembler = cuponesAssembler;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Cupones> buscarPorId(@PathVariable Long id) {
-        Cupones cupones = cuponServices.buscarPorId(id);
+    @GetMapping
+    public CollectionModel<EntityModel<Cupones>> listarCupones() {
+        log.info("Obteniendo todos los cupones");
+        List<EntityModel<Cupones>> cupones = cuponServices.listarCupones().stream()
+                .map(cuponesAssembler::toModel)
+                .collect(Collectors.toList());
+        CollectionModel<EntityModel<Cupones>> collectionModel = CollectionModel.of(cupones,
+                linkTo(methodOn(CuponController.class).listarCupones()).withSelfRel());
+        collectionModel
+                .add(linkTo(methodOn(CuponController.class).crearCupon(null)).withRel("crear cupon").withType("POST"));
 
-        if (cupones == null) {
-            return ResponseEntity.notFound().build();
-        }
+        return collectionModel;
+    }
 
-        return ResponseEntity.ok(cupones);
+    @GetMapping("/{idCupon}")
+    public EntityModel<Cupones> buscarPorId(@PathVariable Long idCupon) {
+        log.info("Obteniendo cupon con id: " + idCupon);
+        Cupones cupon = cuponServices.buscarPorId(idCupon);
+        EntityModel<Cupones> modelo = cuponesAssembler.toModel(cupon);
+        modelo.add(
+                linkTo(methodOn(CuponController.class).listarCupones()).withRel("Todos los cupones").withType("GET"));
+        return modelo;
     }
 
     @PostMapping
-    public Cupones crearCupon(@RequestBody Cupones cupon) {
-        return cuponServices.crearCupon(cupon);
+    public ResponseEntity<EntityModel<Cupones>> crearCupon(@RequestBody Cupones cupon) {
+        log.info("Creando cupon");
+        return ResponseEntity.ok(cuponesAssembler.toModel(cuponServices.crearCupon(cupon)));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Cupones> actualizarCupon(@PathVariable Long id, @RequestBody Cupones cupon) {
-        Cupones cuponActualizado = cuponServices.actualizarCupon(id, cupon);
-
-        if (cuponActualizado == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        return ResponseEntity.ok(cuponActualizado);
+    @PutMapping("/{idCupon}")
+    public ResponseEntity<EntityModel<Cupones>> actualizarCupon(@PathVariable Long idCupon,
+            @RequestBody Cupones cupon) {
+        log.info("Actualizando cupon con id: " + idCupon);
+        return ResponseEntity.ok(cuponesAssembler.toModel(cuponServices.actualizarCupon(idCupon, cupon)));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminarCupon(@PathVariable Long id) {
-        boolean eliminado = cuponServices.eliminarCupon(id);
-
-        if (!eliminado) {
-            return ResponseEntity.notFound().build();
-        }
-
-        return ResponseEntity.ok("Cupón eliminado correctamente");
+    @DeleteMapping("/{idCupon}")
+    public ResponseEntity<Void> eliminarCupon(@PathVariable Long idCupon) {
+        log.info("Eliminando cupon con id: " + idCupon);
+        cuponServices.eliminarCupon(idCupon);
+        return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/aplicar")
-    public Map<String, Object> aplicarCupon(
-            @RequestParam String codigo,
-            @RequestParam Double totalCarrito
-    ) {
-        return cuponServices.aplicarCupon(codigo, totalCarrito);
-    }
 }
