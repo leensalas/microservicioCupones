@@ -574,3 +574,93 @@ Learn more at https://docs.liquibase.com/dropall.
 2026-06-25T21:28:34.037-04:00  INFO 14364 --- [cupones] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-25T21:28:34.043-04:00  INFO 14364 --- [cupones] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-25T21:28:34.049-04:00  INFO 14364 --- [cupones] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-25T21:53:54.396-04:00  INFO 21380 --- [cupones] [main] c.c.c.controller.CuponesControllerTest   : Starting CuponesControllerTest using Java 21.0.10 with PID 21380 (started by dynabook in C:\Users\dynabook\Desktop\BiblioMusic\cupones)
+2026-06-25T21:53:54.398-04:00 DEBUG 21380 --- [cupones] [main] c.c.c.controller.CuponesControllerTest   : Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-25T21:53:54.399-04:00  INFO 21380 --- [cupones] [main] c.c.c.controller.CuponesControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-06-25T21:53:56.593-04:00  INFO 21380 --- [cupones] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-06-25T21:53:56.593-04:00  INFO 21380 --- [cupones] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-06-25T21:53:56.596-04:00  INFO 21380 --- [cupones] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2026-06-25T21:53:56.639-04:00  INFO 21380 --- [cupones] [main] c.c.c.controller.CuponesControllerTest   : Started CuponesControllerTest in 2.628 seconds (process running for 3.764)
+2026-06-25T21:53:56.775-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.controller.CuponController   : Obteniendo cupon con id: 1
+2026-06-25T21:53:57.196-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.controller.CuponController   : Actualizando cupon con id: 1
+2026-06-25T21:53:57.214-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.controller.CuponController   : Obteniendo todos los cupones
+2026-06-25T21:53:57.248-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.controller.CuponController   : Creando cupon
+2026-06-25T21:53:57.266-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.controller.CuponController   : Eliminando cupon con id: 1
+2026-06-25T21:53:57.294-04:00  INFO 21380 --- [cupones] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.cupones.cupones.CuponesApplicationTests]: CuponesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-25T21:53:57.312-04:00  INFO 21380 --- [cupones] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.cupones.cupones.CuponesApplication for test class com.cupones.cupones.CuponesApplicationTests
+2026-06-25T21:53:57.319-04:00  INFO 21380 --- [cupones] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.cupones.cupones.CuponesApplicationTests]: CuponesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-25T21:53:57.323-04:00  INFO 21380 --- [cupones] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.cupones.cupones.CuponesApplication for test class com.cupones.cupones.CuponesApplicationTests
+2026-06-25T21:53:57.381-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.CuponesApplicationTests      : Starting CuponesApplicationTests using Java 21.0.10 with PID 21380 (started by dynabook in C:\Users\dynabook\Desktop\BiblioMusic\cupones)
+2026-06-25T21:53:57.382-04:00 DEBUG 21380 --- [cupones] [main] c.c.cupones.CuponesApplicationTests      : Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-25T21:53:57.382-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.CuponesApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2026-06-25T21:53:57.885-04:00  INFO 21380 --- [cupones] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-25T21:53:57.934-04:00  INFO 21380 --- [cupones] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interface.
+2026-06-25T21:53:58.222-04:00  INFO 21380 --- [cupones] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-25T21:53:58.397-04:00  INFO 21380 --- [cupones] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@365a4b9b
+2026-06-25T21:53:58.400-04:00  INFO 21380 --- [cupones] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-25T21:53:59.931-04:00  INFO 21380 --- [cupones] [main] liquibase.ui                             : INFO: The drop-all command may result in unrecoverable destructive changes to objects at 'jdbc:mysql://localhost:3306/cupones?createDatabaseIfNotExist=true&serverTimezone=UTC'.
+To protect against unwanted drops, set --requireForce=true, which will require a --force=true flag on the command.
+Learn more at https://docs.liquibase.com/dropall.
+
+2026-06-25T21:54:00.067-04:00  INFO 21380 --- [cupones] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2026-06-25T21:54:00.073-04:00  INFO 21380 --- [cupones] [main] liquibase.command                        : Dropping Database Objects in schema: cupones.cupones
+2026-06-25T21:54:00.077-04:00  INFO 21380 --- [cupones] [main] liquibase.snapshot                       : Creating snapshot
+2026-06-25T21:54:00.492-04:00  INFO 21380 --- [cupones] [main] liquibase.database                       : Successfully deleted all supported object types in schema cupones.cupones.
+2026-06-25T21:54:00.495-04:00  INFO 21380 --- [cupones] [main] liquibase.snapshot                       : Creating snapshot
+2026-06-25T21:54:00.499-04:00  WARN 21380 --- [cupones] [main] liquibase.lockservice                    : Failed to release change log lock
+2026-06-25T21:54:00.502-04:00  INFO 21380 --- [cupones] [main] liquibase.ui                             : All objects dropped from root@localhost@jdbc:mysql://localhost:3306/cupones?createDatabaseIfNotExist=true&serverTimezone=UTC
+2026-06-25T21:54:00.504-04:00  INFO 21380 --- [cupones] [main] liquibase.command                        : Command execution complete
+2026-06-25T21:54:00.559-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : Creating database changelog table with name: cupones.databasechangelog
+2026-06-25T21:54:00.577-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : Reading from cupones.databasechangelog
+2026-06-25T21:54:00.584-04:00  INFO 21380 --- [cupones] [main] liquibase.snapshot                       : Creating snapshot
+2026-06-25T21:54:00.981-04:00  INFO 21380 --- [cupones] [main] liquibase.ui                             : Name 'PK_DATABASECHANGELOGLOCK' ignored for PRIMARY key.
+2026-06-25T21:54:01.025-04:00  INFO 21380 --- [cupones] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2026-06-25T21:54:01.025-04:00  INFO 21380 --- [cupones] [main] liquibase.command                        : Using deploymentId: 2438838197
+2026-06-25T21:54:01.027-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : Reading from cupones.databasechangelog
+2026-06-25T21:54:01.041-04:00  INFO 21380 --- [cupones] [main] liquibase.ui                             : Running Changeset: db/changelog/db.cupones.sql::15::ella
+2026-06-25T21:54:01.079-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : Custom SQL executed
+2026-06-25T21:54:01.082-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : ChangeSet db/changelog/db.cupones.sql::15::ella ran successfully in 38ms
+2026-06-25T21:54:01.089-04:00  INFO 21380 --- [cupones] [main] liquibase.ui                             : Running Changeset: db/changelog/db.cupones.sql::16::ella
+2026-06-25T21:54:01.098-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : Custom SQL executed
+2026-06-25T21:54:01.101-04:00  INFO 21380 --- [cupones] [main] liquibase.changelog                      : ChangeSet db/changelog/db.cupones.sql::16::ella ran successfully in 12ms
+2026-06-25T21:54:01.109-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : UPDATE SUMMARY
+2026-06-25T21:54:01.109-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : Run:                          2
+2026-06-25T21:54:01.109-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : Previously run:               0
+2026-06-25T21:54:01.109-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : Filtered out:                 0
+2026-06-25T21:54:01.109-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : -------------------------------
+2026-06-25T21:54:01.109-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : Total change sets:            2
+2026-06-25T21:54:01.110-04:00  INFO 21380 --- [cupones] [main] liquibase.util                           : Update summary generated
+2026-06-25T21:54:01.112-04:00  INFO 21380 --- [cupones] [main] liquibase.command                        : Update command completed successfully.
+2026-06-25T21:54:01.112-04:00  INFO 21380 --- [cupones] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 10
+2026-06-25T21:54:01.116-04:00  INFO 21380 --- [cupones] [main] liquibase.lockservice                    : Successfully released change log lock
+2026-06-25T21:54:01.116-04:00  INFO 21380 --- [cupones] [main] liquibase.command                        : Command execution complete
+2026-06-25T21:54:01.227-04:00  INFO 21380 --- [cupones] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-25T21:54:01.301-04:00  INFO 21380 --- [cupones] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-25T21:54:01.639-04:00  INFO 21380 --- [cupones] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-25T21:54:01.710-04:00  WARN 21380 --- [cupones] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-25T21:54:01.725-04:00  INFO 21380 --- [cupones] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/cupones?createDatabaseIfNotExist=true&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: cupones/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-25T21:54:02.363-04:00  INFO 21380 --- [cupones] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-25T21:54:02.369-04:00  INFO 21380 --- [cupones] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-25T21:54:02.502-04:00  WARN 21380 --- [cupones] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-25T21:54:02.832-04:00  INFO 21380 --- [cupones] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-25T21:54:03.086-04:00  INFO 21380 --- [cupones] [main] c.c.cupones.CuponesApplicationTests      : Started CuponesApplicationTests in 5.753 seconds (process running for 10.212)
+2026-06-25T21:54:03.087-04:00  WARN 21380 --- [cupones] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-25T21:54:03.268-04:00  INFO 21380 --- [cupones] [main] c.cupones.cupones.service.CuponServices  : Actualizando cupon con id: 1
+2026-06-25T21:54:03.276-04:00  INFO 21380 --- [cupones] [main] c.cupones.cupones.service.CuponServices  : Obteniendo todas las cupones
+2026-06-25T21:54:03.279-04:00  INFO 21380 --- [cupones] [main] c.cupones.cupones.service.CuponServices  : Obteniendo cupon con id: 1
+2026-06-25T21:54:03.284-04:00  INFO 21380 --- [cupones] [main] c.cupones.cupones.service.CuponServices  : Creando cupon
+2026-06-25T21:54:03.288-04:00  INFO 21380 --- [cupones] [main] c.cupones.cupones.service.CuponServices  : Eliminando cupon con id: 1
+2026-06-25T21:54:03.309-04:00  INFO 21380 --- [cupones] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-25T21:54:03.314-04:00  INFO 21380 --- [cupones] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-25T21:54:03.320-04:00  INFO 21380 --- [cupones] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -7,14 +7,12 @@ import com.cupones.cupones.repository.CuponRepository;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 public class CuponServices {
-    @Autowired
+
     private CuponRepository cuponRepository;
 
     public List<Cupones> listarCupones() {
